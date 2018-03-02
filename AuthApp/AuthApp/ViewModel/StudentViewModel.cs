@@ -1,14 +1,18 @@
-﻿using AuthApp.Models;
+﻿using Android.App;
+using AuthApp.Models;
 using AuthApp.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace AuthApp.ViewModel
 {
     public class StudentViewModel: INotifyPropertyChanged
     {
+      
         public List<Student> _StudentList;
 
         public List<Student> ListStudentList
@@ -34,6 +38,8 @@ namespace AuthApp.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyname));
         }
 
-       
+      
+
+
     }
 }

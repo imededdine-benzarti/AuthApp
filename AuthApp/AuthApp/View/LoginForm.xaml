@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AuthApp.View.LoginForm">
+    <ContentPage.Content>
+        <Frame BackgroundColor="Orange">
+        <StackLayout>
+            <Grid Padding="10" Margin="10">
+                <Image Source="root.png" HorizontalOptions="CenterAndExpand" WidthRequest="100" HeightRequest="100" />
+            </Grid>
+                <StackLayout VerticalOptions="CenterAndExpand">
+             <Label Text="Authentication"
+                HorizontalOptions="CenterAndExpand" Margin="10" FontSize="Medium" TextColor="White" FontAttributes="Bold" />
+
+                <Entry x:Name="Username" Placeholder="UserName" BackgroundColor="White" TextColor="Orange" Margin="5" />
+                <Entry x:Name="Password" IsPassword="True" Placeholder="Password" BackgroundColor="White" TextColor="Orange" Margin="5" />
+            <Button x:Name="Connection" Text="Connect" Clicked="Connect"/>
+        </StackLayout>
+        </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AuthApp.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,8 +14,10 @@ namespace AuthApp
 		{
 			InitializeComponent();
 
-			MainPage = new AuthApp.MainPage();
-		}
+            MainPage = new AuthApp.View.LoginForm();
+
+            
+        }
 
 		protected override void OnStart ()
 		{

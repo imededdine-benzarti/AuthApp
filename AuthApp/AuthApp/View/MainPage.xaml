@@ -9,23 +9,40 @@
     <ContentPage.BindingContext>
         <ViewModels:StudentViewModel />
     </ContentPage.BindingContext>
-    
-    <ListView ItemsSource="{Binding ListStudentList}" HasUnevenRows="False" x:Name="StudentListView">
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <ViewCell>
-                    <StackLayout Orientation="Vertical">
-                        <Label x:Name="ID" Text="{Binding Id}"/>
-                        <Label x:Name="FullName" Text="{Binding Name}"/>
-                        <Label x:Name="LastName" Text="{Binding LastName}"/>
-                        <Label x:Name="Mobile" Text="{Binding Mobile}"/>
-                        <Label x:Name="Image" Text="{Binding Image}"/>
-                    </StackLayout>
-                </ViewCell>
 
-            </DataTemplate>
-        </ListView.ItemTemplate>
-        
-    </ListView>
+
+    <StackLayout Orientation="Vertical">
+        <Button x:Name="Back" Clicked="ClickGoBack" BackgroundColor="Orange" Text="Back" TextColor="White"/>
+        <Grid>
+        <Label Text="List of Students" FontSize="30" BackgroundColor="Orange" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+        </Grid>
+        <ListView ItemsSource="{Binding ListStudentList}" HasUnevenRows="True" x:Name="StudentListView" ItemTapped="StudentItemTapped">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Grid BackgroundColor="Orange" Padding="10" Margin="10">
+                            <Label x:Name="ID" Text="{Binding Id}"  TextColor="White" FontSize="25" FontAttributes="Bold"/>
+                            </Grid>
+                                <StackLayout Orientation="Horizontal">
+                                <Image x:Name="ImageProfile" Source="{Binding Image}" WidthRequest="30" HeightRequest="30"/>
+                                <StackLayout Orientation="Vertical">
+                                    <Label x:Name="FullName" Text="{Binding FullName}" TextColor="Black" FontSize="15" FontAttributes="Bold"/>
+                                    <Label x:Name="Mobile" Text="{Binding Mobile}" TextColor="Gray" FontSize="13" FontAttributes="Bold"/>
+                                   
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+
+    </StackLayout>
+    
+    
 
 </ContentPage>
